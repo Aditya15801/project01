@@ -154,17 +154,13 @@
     .card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
     .card p { font-size: 0.9rem; color: var(--muted); }
 
-    /* ── IMAGE PLACEHOLDERS ── */
-    .img-placeholder {
-      background: linear-gradient(135deg, #d8ede2, #c8e3d4);
+    /* ── IMAGES ── */
+    .site-img {
       border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* ── HOMESTAY ── */
@@ -323,16 +319,28 @@
         </ul>
         <a class="btn btn-primary" href="#contact">Enquire About Rooms</a>
       </div>
-      <div class="split-img img-placeholder">📷 Add your homestay photo here</div>
+      <div class="split-img">
+        <img class="site-img" src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=900&q=80" alt="Cozy homestay room" />
+      </div>
     </div>
 
     <!-- Gallery -->
     <div class="gallery">
-      <div class="gallery-item img-placeholder" style="height:412px;">📷 Main room photo</div>
-      <div class="gallery-item img-placeholder" style="height:200px;">📷 Dining area</div>
-      <div class="gallery-item img-placeholder" style="height:200px;">📷 Common area</div>
-      <div class="gallery-item img-placeholder" style="height:200px;">📷 Kitchen</div>
-      <div class="gallery-item img-placeholder" style="height:200px;">📷 Exterior</div>
+      <div class="gallery-item" style="height:412px;">
+        <img class="site-img" src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=900&q=80" alt="Homestay bedroom" />
+      </div>
+      <div class="gallery-item" style="height:200px;">
+        <img class="site-img" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80" alt="Dining area" />
+      </div>
+      <div class="gallery-item" style="height:200px;">
+        <img class="site-img" src="https://images.unsplash.com/photo-1543333995-a78aea2eee50?w=600&q=80" alt="Common area" />
+      </div>
+      <div class="gallery-item" style="height:200px;">
+        <img class="site-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Kitchen" />
+      </div>
+      <div class="gallery-item" style="height:200px;">
+        <img class="site-img" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80" alt="Exterior" />
+      </div>
     </div>
   </div>
 </section>
@@ -341,7 +349,9 @@
 <section id="turf">
   <div class="section-inner">
     <div class="turf-split">
-      <div class="turf-img img-placeholder">📷 Add your turf photo here</div>
+      <div class="turf-img">
+        <img class="site-img" src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=900&q=80" alt="Cricket turf" />
+      </div>
       <div class="split-content">
         <p class="section-label">Turf Cricket</p>
         <h2 class="section-title">Play like a pro in Manipal</h2>
