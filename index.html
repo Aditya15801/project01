@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Groups Pvt. Ltd. — Homestay & Turf Cricket, Manipal</title>
+  <meta name="description" content="Welcome to Demo Groups — cozy homestay accommodation and premium turf cricket facilities in Manipal, Udupi." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --bg: #f7f7f5;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --accent: #2d6a4f;
+      --accent-light: #e8f5ee;
+      --border: #e0e0e0;
+      --radius: 10px;
+      --max-w: 1100px;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+    .logo span { color: var(--text); font-weight: 400; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #e8f5ee 0%, #f0faf4 60%, #eef7ed 100%);
+      padding: 100px 24px;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text);
+      max-width: 700px;
+      margin: 0 auto 16px;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 em { color: var(--accent); font-style: normal; }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      padding: 12px 28px;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      display: inline-block;
+    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: #235c42; }
+    .btn-outline { background: white; color: var(--accent); border: 1.5px solid var(--accent); }
+    .btn-outline:hover { background: var(--accent-light); }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: var(--max-w); margin: auto; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin-bottom: 48px;
+    }
+
+    /* ── FEATURES GRID ── */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .card-icon { font-size: 1.8rem; margin-bottom: 14px; }
+    .card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .card p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── IMAGE PLACEHOLDERS ── */
+    .img-placeholder {
+      background: linear-gradient(135deg, #d8ede2, #c8e3d4);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── HOMESTAY ── */
+    #homestay { background: var(--white); }
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .split-img { height: 380px; }
+    .split-content .section-sub { margin-bottom: 28px; }
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .checklist li { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+    .checklist li::before {
+      content: "✓";
+      background: var(--accent-light);
+      color: var(--accent);
+      font-weight: 700;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    /* ── GALLERY STRIP ── */
+    .gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 200px 200px;
+      gap: 12px;
+      margin-top: 40px;
+    }
+    .gallery-item { border-radius: var(--radius); overflow: hidden; }
+    .gallery-item:first-child { grid-row: span 2; }
+
+    /* ── TURF ── */
+    #turf { background: var(--bg); }
+    .turf-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .turf-img { height: 380px; }
+
+    /* ── BOOKING / CTA ── */
+    #contact { background: var(--accent); color: white; text-align: center; }
+    #contact .section-label { color: rgba(255,255,255,0.7); }
+    #contact .section-title { color: white; margin-bottom: 10px; }
+    #contact .section-sub { color: rgba(255,255,255,0.8); margin: 0 auto 40px; }
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: left;
+    }
+    .contact-card .label { font-size: 0.75rem; opacity: 0.7; margin-bottom: 4px; letter-spacing: 0.5px; }
+    .contact-card .value { font-weight: 600; font-size: 1rem; }
+    .contact-card a { color: white; text-decoration: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      color: #999;
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.82rem;
+      line-height: 1.8;
+    }
+    footer strong { color: #ddd; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .split, .turf-split { grid-template-columns: 1fr; gap: 32px; }
+      .turf-split .split-content { order: -1; }
+      .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-item:first-child { grid-row: span 1; grid-column: span 2; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#">Demo Groups <span>Pvt. Ltd.</span></a>
+    <ul class="nav-links">
+      <li><a href="#homestay">Homestay</a></li>
+      <li><a href="#turf">Turf Cricket</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Manipal · Udupi</div>
+  <h1>Stay Comfortable.<br><em>Play Hard.</em></h1>
+  <p>Premium homestay accommodation and professional turf cricket facilities — all under one roof in the heart of Manipal.</p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="#homestay">Explore Homestay</a>
+    <a class="btn btn-outline" href="#turf">Book the Turf</a>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">Why Demo Groups</p>
+    <h2 class="section-title">Two great experiences, one trusted company</h2>
+    <p class="section-sub">From a comfortable bed to a competitive cricket match — we've got Manipal covered.</p>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">🏠</div>
+        <h3>Cozy Homestay</h3>
+        <p>Fully furnished rooms with home-cooked meals, Wi-Fi, and a peaceful environment perfect for students and travellers.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏏</div>
+        <h3>Premium Turf Cricket</h3>
+        <p>Well-maintained synthetic turf, floodlights for evening play, and professional-grade pitches for casual matches and tournaments.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📍</div>
+        <h3>Prime Manipal Location</h3>
+        <p>Conveniently located near Manipal University — easy access for students, faculty, and visitors from Udupi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOMESTAY -->
+<section id="homestay">
+  <div class="section-inner">
+    <div class="split">
+      <div class="split-content">
+        <p class="section-label">Accommodation</p>
+        <h2 class="section-title">A home away from home</h2>
+        <p class="section-sub">Whether you're a student settling in or a visitor exploring coastal Karnataka, our homestay offers comfort, safety, and warmth.</p>
+        <ul class="checklist">
+          <li>Furnished single and double rooms</li>
+          <li>Home-cooked vegetarian & non-veg meals</li>
+          <li>High-speed Wi-Fi included</li>
+          <li>24/7 security and CCTV</li>
+          <li>Laundry & housekeeping services</li>
+          <li>Walking distance to Manipal University</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">Enquire About Rooms</a>
+      </div>
+      <div class="split-img img-placeholder">📷 Add your homestay photo here</div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery">
+      <div class="gallery-item img-placeholder" style="height:412px;">📷 Main room photo</div>
+      <div class="gallery-item img-placeholder" style="height:200px;">📷 Dining area</div>
+      <div class="gallery-item img-placeholder" style="height:200px;">📷 Common area</div>
+      <div class="gallery-item img-placeholder" style="height:200px;">📷 Kitchen</div>
+      <div class="gallery-item img-placeholder" style="height:200px;">📷 Exterior</div>
+    </div>
+  </div>
+</section>
+
+<!-- TURF -->
+<section id="turf">
+  <div class="section-inner">
+    <div class="turf-split">
+      <div class="turf-img img-placeholder">📷 Add your turf photo here</div>
+      <div class="split-content">
+        <p class="section-label">Turf Cricket</p>
+        <h2 class="section-title">Play like a pro in Manipal</h2>
+        <p class="section-sub">Our professionally laid synthetic cricket turf is open for casual bookings, team practice sessions, and local tournaments.</p>
+        <ul class="checklist">
+          <li>Full-size synthetic turf pitch</li>
+          <li>Floodlights for evening & night play</li>
+          <li>Changing rooms & seating area</li>
+          <li>Available 7 days a week</li>
+          <li>Hourly and full-day booking options</li>
+          <li>Equipment rental available</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">Book the Turf</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / CTA -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Ready to stay or play?</h2>
+    <p class="section-sub">Call or WhatsApp us to check availability, pricing, or to make a booking. We're happy to help.</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="label">PHONE / WHATSAPP</div>
+        <div class="value"><a href="tel:+919999999999">+91 99999 99999</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="label">EMAIL</div>
+        <div class="value"><a href="mailto:info@demogroups.in">info@demogroups.in</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="label">LOCATION</div>
+        <div class="value">Manipal, Udupi District<br>Karnataka — 576 104</div>
+      </div>
+    </div>
+    <a class="btn" style="background:white;color:#2d6a4f;" href="https://wa.me/919999999999" target="_blank">
+      💬 WhatsApp Us
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Demo Groups Private Limited</strong><br>
+  CIN: U00000KA2024PTC000000 &nbsp;|&nbsp; Manipal, Udupi, Karnataka — 576 104<br>
+  © 2026 Demo Groups Pvt. Ltd. All rights reserved.
+</footer>
+
+</body>
+</html>
